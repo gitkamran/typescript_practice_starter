@@ -17,4 +17,11 @@ tsc --init
 ]
 **********
 watch project
+
+npm install -g ts-node
+
+npm install -g nodemon
+
 tsc -w
+
+
