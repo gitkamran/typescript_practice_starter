@@ -24,4 +24,8 @@ npm install -g nodemon
 
 tsc -w
 
+cd /src
+
+nodemon --exec ts-node main.ts
+
 

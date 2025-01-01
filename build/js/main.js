@@ -1,33 +1,39 @@
 "use strict";
-let firstname = "Mohammad";
-let lastname = "Kamran";
-console.log(firstname + " " + lastname);
-////////////
-let a = 16;
-let b = "2";
-let c = 8;
-console.log(a / c);
-console.log(a - c);
-//////////////////
-function srtingOrNumber(value1, value2) {
-    return value1 + value2;
-}
-console.log(typeof srtingOrNumber(5, 2), srtingOrNumber(5, 2));
-console.log(srtingOrNumber(firstname, lastname));
-console.log(srtingOrNumber(2, 5));
-////////////
-function srtingGlobalValue(value1, value2) {
-    return value1 + value2;
-}
-console.log(srtingGlobalValue("a", "2"));
-////////////////////
-function stringValue(value1, value2) {
-    return value1 + " " + value2;
-}
-console.log(typeof stringValue(firstname, lastname), stringValue(firstname, lastname));
-////////////
-function globalValue(value1, value2) {
-    return value1 + value2;
-}
-console.log(globalValue(8, 4));
-////////////////////
+// primitive types
+let firstName = "Mohammad";
+let lastName;
+lastName = "Kamran";
+let isAdmin;
+isAdmin = true;
+let age = 30;
+age = 31;
+let color = ["red", "blue"];
+let nums = ["1", "2", 10];
+let car = [];
+car.push("bmw");
+car.push("toyota");
+console.log(car);
+let nums2 = [];
+nums2.push(1);
+nums2.push("2");
+console.log(nums2);
+let userId = null;
+let personalCode;
+let isLike = undefined;
+// Array Type
+let users = [];
+users.push("ali");
+// union type
+let numbers = [];
+numbers.push(1);
+numbers.push("2");
+// Function Type
+let voidFnc = () => {
+    console.log("without return");
+};
+let stringFnc = () => {
+    return "return string";
+};
+let numberFnc = () => {
+    return 1;
+};
