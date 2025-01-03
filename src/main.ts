@@ -51,3 +51,67 @@ let stringFnc = (): string => {
 let numberFnc = (): number => {
   return 1;
 };
+
+// array type
+
+const tasks: string[] = ["one"];
+
+tasks.push("two", "tree");
+
+tasks.map((task) => {
+  console.log(task);
+});
+
+let colors = ["red", "green", "blue", 999];
+//or
+let colors2: (string | number)[] = ["red", "green", "blue", 999];
+
+colors2.push("yellow", 333);
+
+// tuple
+
+let myArray: [string, number] = ["john", 10];
+
+myArray.push("10"); //bug in ts
+
+// object
+
+const person: {
+  name: string;
+  age: number;
+} = {
+  name: "john",
+  age: 30,
+};
+
+console.log(person.name, person.age);
+
+// functions
+
+function myFunction(name: string): string {
+  return "hello " + name;
+}
+console.log(myFunction("john"));
+
+function myFunction2(name?: string): void {
+  return console.log("hello " + name);
+}
+
+myFunction2();
+
+const myFunction3 = (...names: (string | number)[]): (string | number)[] => {
+  return names.map((name) => name);
+};
+
+const myFunction4 = (...names: string[] | number[]): (string | number)[] => {
+  return names.map((name) => name);
+};
+
+
+const names = myFunction3("3", "2", 1);
+const names2 = myFunction4("3", "2");
+const names3 = myFunction4(3, 2);
+
+console.log(names);
+console.log(names2);
+console.log(names3);
