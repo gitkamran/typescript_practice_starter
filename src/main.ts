@@ -102,16 +102,51 @@ myFunction2();
 const myFunction3 = (...names: (string | number)[]): (string | number)[] => {
   return names.map((name) => name);
 };
+const names = myFunction3("3", "2", 1);
+console.log(names);
 
 const myFunction4 = (...names: string[] | number[]): (string | number)[] => {
   return names.map((name) => name);
 };
 
-
-const names = myFunction3("3", "2", 1);
 const names2 = myFunction4("3", "2");
 const names3 = myFunction4(3, 2);
 
-console.log(names);
 console.log(names2);
 console.log(names3);
+
+type Role = "ADMIN" | "USER";
+
+type MyTeam = {
+  fullname: string;
+  role?: Role;
+  age: number;
+  address?: string;
+};
+
+const myTeam: MyTeam = {
+  fullname: "Mohammad",
+  role: "ADMIN",
+  age: 32,
+};
+
+const myTeam2: MyTeam = {
+  fullname: "John",
+  age: 16,
+};
+
+const myteamFunction = (myTeam: MyTeam): void => {
+  if (myTeam.fullname && myTeam.role) {
+    return console.log(`hello ${myTeam.fullname} you are ${myTeam.role}.`);
+  } else {
+    const teamError: Error = new Error("Please enter fullname and role!");
+    console.log(teamError.message);
+  }
+};
+myteamFunction(myTeam);
+myteamFunction(myTeam2);
+
+const myteamFunction2 = (myTeam: MyTeam): string => {
+  return `hello ${myTeam.fullname} you are ${myTeam.age} years old.`;
+};
+console.log(myteamFunction2(myTeam2));
