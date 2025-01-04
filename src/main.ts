@@ -137,7 +137,7 @@ const myTeam2: MyTeam = {
 
 const myteamFunction = (myTeam: MyTeam): void => {
   if (myTeam.fullname && myTeam.role) {
-    return console.log(`hello ${myTeam.fullname} you are ${myTeam.role}.`);
+    console.log(`hello ${myTeam.fullname} you are ${myTeam.role}.`);
   } else {
     const teamError: Error = new Error("Please enter fullname and role!");
     console.log(teamError.message);
