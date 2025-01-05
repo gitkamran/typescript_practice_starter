@@ -115,7 +115,10 @@ const names3 = myFunction4(3, 2);
 console.log(names2);
 console.log(names3);
 
-type Role = "ADMIN" | "USER";
+enum Role {
+  ADMIN = "ADMIN",
+  USER = "USER",
+}
 
 type MyTeam = {
   fullname: string;
@@ -126,7 +129,7 @@ type MyTeam = {
 
 const myTeam: MyTeam = {
   fullname: "Mohammad",
-  role: "ADMIN",
+  role: Role.ADMIN,
   age: 32,
 };
 
